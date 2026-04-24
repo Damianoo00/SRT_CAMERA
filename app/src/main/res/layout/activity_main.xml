@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Podgląd kamery -->
+    <SurfaceView
+    android:id="@+id/preview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Panel górny z ustawieniami -->
+    <LinearLayout
+        android:id="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#CC000000"
+        android:padding="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SRT Camera"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Wiersz IP + Port -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etIp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="IP serwera"
+                android:text="192.168.1.100"
+                android:inputType="text"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"
+                android:background="@android:drawable/edit_text"
+                android:backgroundTint="#444444"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/etPort"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:hint="Port"
+                android:text="9999"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"
+                android:background="@android:drawable/edit_text"
+                android:backgroundTint="#444444"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏸ Zatrzymano"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"
+            android:layout_marginTop="6dp" />
+
+    </LinearLayout>
+
+    <!-- Przycisk przełączania kamery -->
+    <Button
+        android:id="@+id/btnFlip"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:text="🔄"
+        android:textSize="20sp"
+        android:padding="0dp"
+        android:backgroundTint="#AA000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Przycisk Start/Stop -->
+    <Button
+        android:id="@+id/btnStream"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:text="▶  START"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#CCFF0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="40dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
